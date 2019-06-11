@@ -1,0 +1,38 @@
+{
+  "name": "app93-my-recipe-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently 'npm run server' 'npm run client'",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiep294/app93-my-recipe-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiep294/app93-my-recipe-list/issues"
+  },
+  "homepage": "https://github.com/hiep294/app93-my-recipe-list#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "hiep294-mongoose": "^1.0.0",
+    "hiep294-route": "^1.0.7",
+    "mongoose": "^5.5.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*"
+    ]
+  }
+}
